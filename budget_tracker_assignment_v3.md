@@ -26,8 +26,8 @@ By completing this project, you will:
 #### 1. `add` — Add a Transaction
 
 ```bash
-uv run budget.py add --amount 45.50 --category food --desc "Lunch at cafe" --type expense
-uv run budget.py add --amount 3000 --category salary --desc "Monthly salary" --type income
+uv run budget add --amount 45.50 --category food --desc "Lunch at cafe" --type expense
+uv run budget add --amount 3000 --category salary --desc "Monthly salary" --type income
 ```
 
 **Arguments:**
@@ -45,10 +45,10 @@ uv run budget.py add --amount 3000 --category salary --desc "Monthly salary" --t
 #### 2. `list` — View Transactions
 
 ```bash
-uv run budget.py list
-uv run budget.py list --month 2026-04
-uv run budget.py list --category food
-uv run budget.py list --type expense
+uv run budget list
+uv run budget list --month 2026-04
+uv run budget list --category food
+uv run budget list --type expense
 ```
 
 **Arguments:**
@@ -64,8 +64,8 @@ uv run budget.py list --type expense
 #### 3. `summary` — Monthly Spending Report
 
 ```bash
-uv run budget.py summary
-uv run budget.py summary --month 2026-04
+uv run budget summary
+uv run budget summary --month 2026-04
 ```
 
 Output should display:
@@ -80,8 +80,8 @@ Output should display:
 #### 4. `export` — Export to CSV
 
 ```bash
-uv run budget.py export --output april_report.csv
-uv run budget.py export --month 2026-04 --output april_report.csv
+uv run budget export --output april_report.csv
+uv run budget export --month 2026-04 --output april_report.csv
 ```
 
 **Arguments:**
@@ -96,8 +96,8 @@ uv run budget.py export --month 2026-04 --output april_report.csv
 #### 5. `set-limit` — Set a Budget Limit per Category
 
 ```bash
-uv run budget.py set-limit --category food --limit 300
-uv run budget.py set-limit --category rent --limit 1500
+uv run budget set-limit --category food --limit 300
+uv run budget set-limit --category rent --limit 1500
 ```
 
 When running `summary`, warn the user if spending in a category exceeds its set limit.
@@ -190,7 +190,7 @@ powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | ie
 ### 2. Initialize the project
 
 ```bash
-uv init --package budget_tracker --python 3.11/3.12/3.13/3.14
+uv init --package budget_tracker --python 3.13
 uv venv
 source .venv/bin/activate
 
