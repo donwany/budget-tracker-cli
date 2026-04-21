@@ -74,25 +74,29 @@ uv run budget delete --id 3
 
 ---
 
-## Project Structure
+## 🗂️ Required Project Structure
 
 ```
 budget_tracker/
-├── pyproject.toml
+│
+├── pyproject.toml         # uv project config — dependencies and metadata
+├── .python-version        # Pinned Python version (auto-created by uv)
+├── uv.lock                # Locked dependency versions (auto-created by uv)
+├── src/
+│   └── budget_tracker/
+│       ├── __init__.py
+│       ├── __main__.py        # Entry point — argparse setup and subcommand routing
+│       ├── commands/
+│       │   ├── __init__.py
+│       │   ├── add.py             # Logic for the add subcommand
+│       │   ├── list_transactions.py  # Logic for the list subcommand
+│       │   ├── summary.py         # Logic for the summary subcommand
+│       │   ├── export.py          # Logic for the export subcommand
+│       │   └── set_limit.py       # Logic for the set-limit subcommand
+│       └── storage.py             # All file I/O — read/write transactions and limits
 ├── data/
-│   └── transactions.json       # Auto-created on first run
-└── src/
-    └── budget_tracker/
-        ├── __init__.py
-        ├── __main__.py          # Entry point & argparse setup
-        ├── storage.py           # All file I/O
-        └── commands/
-            ├── add.py
-            ├── list_transactions.py
-            ├── summary.py
-            ├── export.py
-            ├── set_limit.py
-            └── delete.py        # Bonus
+│   └── transactions.json  # Persisted transaction data (auto-created)
+└── README.md              # How to install and use your app
 ```
 
 ## Data Storage
